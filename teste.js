@@ -1,4 +1,10 @@
-let numeros = [1,2,3,4,5,6]
 
 
-console.log(`Posição ${numeros.indexOf(10)}`)
+let num = [1,2,3]
+let soma = 0
+for(pos in num){
+	soma += num[pos]
+}
+
+console.log(soma)
+	

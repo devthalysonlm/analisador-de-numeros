@@ -19,8 +19,8 @@ function inLista(n, l){
     }
 }
 
-
 function adicionar(){
+    res.innerHTML= ``
     if(isNumber(num.value) & !inLista(num.value, valores)){
         valores.push(Number(num.value))
         item = document.createElement('option')
@@ -33,35 +33,35 @@ function adicionar(){
     num.focus()
 }
 
-
 function finalizar(){
-    let total = valores.length
-    let maior = valores[0]
-    let menor = valores[0]
-    let soma = 0
-    for(pos in valores){
-        if(valores[pos] > maior){
-            maior = valores[pos]
-        }else if( valores[pos] < menor){
-            menor = valores[pos]
-        }
+    if(valores.length == 0){
+        alert`Informe um valor antes de finalizar!`
+    }else {
+        let total = valores.length
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        let media = 0
+        for(pos in valores){
+            if(valores[pos] > maior){
+                maior = valores[pos]
+            }else if( valores[pos] < menor){
+                menor = valores[pos]
+            }
         soma += valores[pos]
+        media = soma / total
+        }
+
+        res.innerHTML = ``
+        res.innerHTML += `<p>Ao todo, temos ${total} números cadastrados.</p>`
+        res.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`
+        res.innerHTML += `<p>O menor valor informado foi ${menor}.</p>`
+        res.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`
+        res.innerHTML += `<p>A média dos valores digitados é ${media}.</p>`
     }
-
-    res.innerHTML = ``
-    res.innerHTML += `<p>Ao todo, temos ${total} números cadastrados.</p>`
-    res.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`
-    res.innerHTML += `<p>O menor valor informado foi ${menor}.</p>`
-    res.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`
-
 }
 
 
 
 
 
-//Sabemos que para buscar um valor dentro de um array utilizamos o indexOf() e dentro dos paranteses o elemento no qual queremos procurar
-//Feito isso o Js vai me retornar a posição de onde vem esse valor
-//Vai ser feito uma procura de indexOf da posição numeros na lista l.
-
-//para somar os valores de um array eu vou somar minha soma que é igual a 0 mais o meu array dentro da minha contagem for.

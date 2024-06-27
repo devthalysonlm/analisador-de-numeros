@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(70, 142, 230);
+
+}
+
+header{
+
+    color: beige;
+    text-align: center;
+
+}
+
+section{
+    background: beige;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5PX 5PX 10PX rgba(0, 0, 0, 0.363);
+}
+
+footer{
+
+    color: beige;
+    text-align: center;
+    font-style: italic;
+
+}
